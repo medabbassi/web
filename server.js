@@ -16,19 +16,6 @@ app.post('https://api.netalem.tn/users', (request, response) => {
 });
 
 
-const middlewares = [
-    // ...
-    cookieParser(),
-    session({
-      secret: 'super-secret-key',
-      key: 'super-secret-cookie',
-      resave: false,
-      saveUninitialized: false,
-      cookie: { maxAge: 60000 }
-    }),
-    flash(),
-  ];
-
 
 app.use((req, res, next) => {
     res.status(404).send("Sorry can't find that!");
